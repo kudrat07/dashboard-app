@@ -1,0 +1,162 @@
+.container{
+    background-color: #FFFFFF;
+    width: 100%;
+    margin: 14px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.content{
+  display: flex;
+  justify-content: space-between;
+}
+.sectionFirst{
+  width: 70%;
+  padding: 40px 60px;
+}
+.titleWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.title{
+  color: #262A41;
+  font-weight: 600;
+  letter-spacing: 0.44px;
+}
+.logoWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.logos{
+  display: flex;
+}
+.dateRange{
+  color: #101010c9;
+  font-size: 16px;
+  letter-spacing: 0.34px;
+}
+
+.chartContainer{
+  margin: 16px 0;
+}
+
+.itemTitleWrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.itemDate{
+  color: #262A41;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.border{
+  border: 0.5px solid #DEDEDE;
+}
+.item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 24px 0;
+}
+.itemCategory{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category{
+  color: #273240;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.34px;
+}
+
+.time{
+  color: #404852;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.price{
+  color: #273240;
+  font-weight: 600;
+  letter-spacing: 0.34px;
+}
+
+
+
+.sectionSecond{
+  background-color: #F9FAFC;
+  height: 100vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper{
+  margin: 48px 24px;
+}
+.titleSmall{
+  color: #262A41;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.33px;
+}
+
+.progressChart{
+  width: 100%;
+  margin-top: 4px;
+}
+
+.rectangle{
+  position: relative;
+  background-color: #EDF0F6;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 8px;
+  border-radius: 16px;
+  display: flex;
+}
+.illustration{
+  position: absolute;
+  left: 24px;
+  top: -12px;
+}
+.leafLogo{
+  position: absolute;
+  right: 24px;
+  top: -24px;
+}
+.rectangleText{
+  margin: 70px 24px 0 24px;
+}
+.para{
+  color: #273240;
+  font-weight: 600;
+  letter-spacing: 0.34px;
+}
+.description{
+  font-size: 12px;
+  line-height: 18px;
+  color: #404852;
+  letter-spacing: 0.43px;
+}
+.sectionBtn{
+  color: #fff;
+  background-color: #101010;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  cursor: no-drop;
+}
+
