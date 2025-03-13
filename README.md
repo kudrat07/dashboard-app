@@ -35,10 +35,11 @@ Make sure you have the following installed:
 
 3. **Start the development server**
 
+   npm run dev
    npm start
 
 4. **Access the application**
-   Open `http://localhost:3000` in your browser.
+   Open `http://localhost:5173` in your browser.
 
 ## Authentication Details
 - **Login Credentials:**
