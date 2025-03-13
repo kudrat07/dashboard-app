@@ -26,7 +26,7 @@ Make sure you have the following installed:
 ### Steps to Run the Project
 1. **Clone the repository**
    
-   git clone [GitHub Repository URL]
+   git clone https://github.com/kudrat07/dashboard-app.git
    cd [Project Directory]
    
 2. **Install dependencies**
@@ -57,7 +57,7 @@ Make sure you have the following installed:
 - **Deployment:** Hosted on Vercel for a seamless and scalable deployment experience.
 
 ## Deployment
-This project is deployed on Vercel. You can access it here: [Deployment Link]
+This project is deployed on Vercel. You can access it here: https://dashboard-app-olive-six.vercel.app/
 
 ## Folder Structure
 ```

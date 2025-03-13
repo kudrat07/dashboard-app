@@ -15,11 +15,10 @@ export const loginUser = async (formData) => {
   } catch (error) {
     if (error.response) {
       console.error(error.response?.data);
-      throw new Error(error.response.data.error || "Something went wrong")
-    }
-    else if(error.request) {
-        console.error("No response received:", error.request);
-        throw new Error("Server is not responding, Please try again later")
+      throw new Error(error.response.data.error || "Something went wrong");
+    } else if (error.request) {
+      console.error("No response received:", error.request);
+      throw new Error("Server is not responding, Please try again later");
     }
   }
 };
@@ -27,55 +26,94 @@ export const loginUser = async (formData) => {
 // GETTING USER DETAILS FROM Reqres API
 const USER_URL = "https://reqres.in/api/users/3";
 
-export const fetchUserData = async() => {
+export const fetchUserData = async () => {
   try {
     const response = await axios.get(USER_URL);
     return response.data.data;
-
   } catch (error) {
-    if(error.response) {
+    if (error.response) {
       console.error(error.response?.data);
-      throw new Error(error.response.data.error || "Something went wrong")
-    } else if(error.request){
-      console.log("No response received:", error.request)
-      throw new Error("Server is not responding, Please try again later")
+      throw new Error(error.response.data.error || "Something went wrong");
+    } else if (error.request) {
+      console.log("No response received:", error.request);
+      throw new Error("Server is not responding, Please try again later");
     }
   }
-}
+};
 
 // GETTING EXPENSES DATA FROM MockAPI
 
-const EXPENSES_URL = "https://67d1cf1590e0670699bb9e91.mockapi.io/expenses/expenses";
+const EXPENSES_URL =
+  "https://67d1cf1590e0670699bb9e91.mockapi.io/expenses/expenses";
 
-export const fetchExpenses = async() => {
+export const fetchExpenses = async () => {
   try {
     const response = await axios.get(EXPENSES_URL);
     return response.data;
   } catch (error) {
-    if(error.response) {
-      console.error(error.response?.data)
+    if (error.response) {
+      console.error(error.response?.data);
       throw new Error(error.response.data.error || "Something went wrong");
-    } else if(error.request) {
-      console.error("No response received", error.request)
-      throw new Error("Server is not responding, Please try again later")
+    } else if (error.request) {
+      console.error("No response received", error.request);
+      throw new Error("Server is not responding, Please try again later");
     }
   }
-}
+};
 
 // GETTING PROGRESS BAR DATA FROM MockAPI
-const PROGRESS_URL = "https://67d1cf1590e0670699bb9e91.mockapi.io/expenses/progressBar"
+const PROGRESS_URL =
+  "https://67d1cf1590e0670699bb9e91.mockapi.io/expenses/progressBar";
 
-export const fetchBarData = async() => {
+export const fetchBarData = async () => {
   try {
-    const response = await axios.get(PROGRESS_URL)
+    const response = await axios.get(PROGRESS_URL);
     return response.data;
   } catch (error) {
-    if(error.response){
-      console.error(error.response?.data)
+    if (error.response) {
+      console.error(error.response?.data);
       throw new Error(error.response.data.error || "Something went wrong");
-    } else if(error.request) {
+    } else if (error.request) {
       console.log("No response received", error.request);
-      throw new Error("Server is not responding, Please try again later")
+      throw new Error("Server is not responding, Please try again later");
     }
   }
-}
+};
+
+// GETTING TIPS DATA FROM API
+const TIPS_API = "https://67d1ce5190e0670699bb9c5b.mockapi.io/expenses/tips";
+
+export const fetchTipsData = async () => {
+  try {
+    const response = await axios.get(TIPS_API);
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      console.error(error.response?.data);
+      throw new Error(error.response.data.error || "Something went wrong");
+    } else if (error.request) {
+      console.log("No response received", error.request);
+      throw new Error("Server is not responding, Please try again later");
+    }
+  }
+};
+
+// GETTING HEADER DATA FROM API
+const HEADER_API =
+  "https://67d1ce5190e0670699bb9c5b.mockapi.io/expenses/header";
+
+export const fetchHeaderData = async () => {
+  try {
+    const response = await axios.get(HEADER_API);
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      console.error(error.response?.data);
+      throw new Error(error.response.data.error || "Something went wrong");
+    } else if (error.request) {
+      console.log("No response received", error.request);
+      throw new Error("Server is not responding, Please try again later");
+    }
+  }
+};
+

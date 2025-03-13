@@ -5,9 +5,7 @@ import userLogo from "../../assets/users-logo.png";
 import dotIcon from "../../assets/three-dot.png";
 import BarChart from "../BarChart/BarChart";
 import ProgressChart from "../ProgressChart/ProgressChart";
-import illustration from "../../assets/illustration.png";
-import leaf from "../../assets/illustration-leaf.png";
-import { fetchExpenses, fetchBarData } from "../../apis/auth";
+import { fetchExpenses, fetchBarData, fetchTipsData, fetchHeaderData} from "../../apis/auth";
 import toast from "react-hot-toast";
 import Loader from "../Loader/Loader";
 
@@ -16,20 +14,26 @@ const Content = () => {
   const [previousExpenses, setPreviousExpenses] = useState([]);
   const [barData, setBarData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [tips, setTips] = useState([])
+  const [headerData, setHeaderData] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [expenses, barDataRes] = await Promise.all([
+        const [expenses, barDataRes, tipsRes, headerRes] = await Promise.all([
           fetchExpenses(),
-          fetchBarData()
+          fetchBarData(),
+          fetchTipsData(),
+          fetchHeaderData()
         ])
         const data = expenses;
         const newData = data.slice(0, 3);
         const prevData = data.slice(3, 5);
         setTodayExpenses(newData);
         setPreviousExpenses(prevData);
-        setBarData(barDataRes)
+        setBarData(barDataRes);
+        setTips(tipsRes);
+        setHeaderData(headerRes);
       } catch (error) {
         console.error(error.message);
         toast.error(error.message);
@@ -39,6 +43,9 @@ const Content = () => {
     };
     fetchData();
   }, []);
+
+
+
 
   const getPreviousDate = (daysAgo) => {
     const date = new Date();
@@ -61,12 +68,12 @@ const Content = () => {
         <div className={styles.content}>
           <div className={styles.sectionFirst}>
             <div className={styles.titleWrapper}>
-              <h1 className={styles.title}>Expenses</h1>
+              <h1 className={styles.title}>{headerData[0].title}</h1>
               <div className={styles.logoWrapper}>
                 <div className={styles.logos}>
-                  <img src={userLogo} alt="" />
+                  <img src={headerData[0].userLogo} alt="" />
                 </div>
-                <img src={plusIcon} alt="" className={styles.plusIcon} />
+                <img src={headerData[0].plusIcon} alt="" className={styles.plusIcon} />
               </div>
             </div>
             <p className={styles.dateRange}>01 - 25 March, 2020</p>
@@ -133,16 +140,15 @@ const Content = () => {
               </div>
               <div className={styles.rectangle}>
                 <img
-                  src={illustration}
+                  src={tips[0].imgFirst}
                   alt="illustration"
                   className={styles.illustration}
                 />
-                <img src={leaf} alt="leaf" className={styles.leafLogo} />
+                <img src={tips[0].imgSecond} alt="leaf" className={styles.leafLogo} />
                 <div className={styles.rectangleText}>
-                  <p className={styles.para}> Save more money</p>
+                  <p className={styles.para}>{tips[0].title}</p>
                   <p className={styles.description}>
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim.
+                    {tips[0].description}
                   </p>
                   <button className={styles.sectionBtn}>VIEW TIPS</button>
                 </div>
