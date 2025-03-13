@@ -52,7 +52,7 @@ const options = {
 
 export default function BarChartComponent() {
   return (
-    <div style={{ width: "100%", height: "60px" }}>
+    <div style={{ width: "100%", height: "32px" }}>
       <Bar data={data} options={options} />
     </div>
   );

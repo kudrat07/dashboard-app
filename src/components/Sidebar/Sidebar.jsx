@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Sidebar.module.css";
-import userImg from "../../assets/Profile.png";
 import rating from "../../assets/Notifications.png"
 import { fetchUserData } from "../../apis/auth";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [userInfo, setUserInfo] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getInfo = async() => {
@@ -19,12 +20,17 @@ const Sidebar = () => {
     getInfo();
   }, [])
 
+      const handleLogout = () =>{
+        localStorage.clear()
+        navigate("/")
+      }
+
 
   return (
       <div className={styles.sidebar}>
         <div className={styles.profileWrapper}>
           <figure className={styles.figure}>
-            <img className={styles.userImg} src={userInfo.avatar} alt="user-img" className={styles.avatar}/>
+            <img  src={userInfo.avatar} alt="user-img" className={styles.avatar}/>
             <img src={rating} alt="" className={styles.rating}/>
           </figure>
           <h2 className={styles.username}>{`${userInfo.first_name}${userInfo.last_name}`}</h2>
@@ -36,8 +42,13 @@ const Sidebar = () => {
             <button className={`${styles.btn} ${styles.btnActive}`}>Expenses</button>
             <button className={styles.btn}>Wallets</button>
             <button className={styles.btn}>Summary</button>
-            <button className={styles.btn}>Accounts</button>
             <button className={styles.btn}>Settings</button>
+            <button
+             className={styles.btnLogout}
+             onClick={handleLogout}
+             >
+             Logout
+             </button>
         </div>
 
       </div>
